@@ -17,3 +17,8 @@ npx hardhat run scripts/get-greeter.js # get last set message
 # will cost some gas fee to set MSG to chain:
 MSG="some message" npx hardhat run scripts/set-greeter.js
 ```
+
+### Deployed contract
+
+* `0xec8eeCa064Cd7Fe97667a6d997C2f485C31F7173`
+* https://rinkeby.etherscan.io/address/0xec8eeCa064Cd7Fe97667a6d997C2f485C31F7173
