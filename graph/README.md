@@ -14,5 +14,8 @@ $ graph init
 ✖ Failed to fetch ABI from Etherscan: ABI not found, try loading it from a local file
 ✔ ABI file (path) · contracts/artifacts/contracts/Greeter.sol/Greeter.json
 ✔ Contract Name · Greeter
+
+$ vim schema.graphql
+$ graph codegen
 # ...
 ```

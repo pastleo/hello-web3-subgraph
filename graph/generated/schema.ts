@@ -11,7 +11,7 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
-export class ExampleEntity extends Entity {
+export class Global extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -19,18 +19,18 @@ export class ExampleEntity extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save ExampleEntity entity without an ID");
+    assert(id != null, "Cannot save Global entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type ExampleEntity must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type Global must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("ExampleEntity", id.toString(), this);
+      store.set("Global", id.toString(), this);
     }
   }
 
-  static load(id: string): ExampleEntity | null {
-    return changetype<ExampleEntity | null>(store.get("ExampleEntity", id));
+  static load(id: string): Global | null {
+    return changetype<Global | null>(store.get("Global", id));
   }
 
   get id(): string {
@@ -60,12 +60,12 @@ export class ExampleEntity extends Entity {
     this.set("from", Value.fromBytes(value));
   }
 
-  get greeting(): string {
-    let value = this.get("greeting");
+  get latestMessage(): string {
+    let value = this.get("latestMessage");
     return value!.toString();
   }
 
-  set greeting(value: string) {
-    this.set("greeting", Value.fromString(value));
+  set latestMessage(value: string) {
+    this.set("latestMessage", Value.fromString(value));
   }
 }
