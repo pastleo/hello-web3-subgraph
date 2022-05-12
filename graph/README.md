@@ -18,4 +18,8 @@ $ graph init
 $ vim schema.graphql
 $ graph codegen
 # ...
+
+$ vim src/mapping.ts
+$ graph build
+# ...
 ```
