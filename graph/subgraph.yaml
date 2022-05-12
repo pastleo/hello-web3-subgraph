@@ -1,0 +1,23 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Greeter
+    network: rinkeby
+    source:
+      address: "0xec8eeCa064Cd7Fe97667a6d997C2f485C31F7173"
+      abi: Greeter
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Greeted
+      abis:
+        - name: Greeter
+          file: ./abis/Greeter.json
+      eventHandlers:
+        - event: Greeted(address,string,uint256)
+          handler: handleGreeted
+      file: ./src/mapping.ts
